@@ -11,7 +11,7 @@ return values.reduce((acc, value) => {
 const input = [1, 'hello', function sayHi(){ console.log('hi') }, 'world', true, 0n, 1000];
 const output = categorize(input);
 
-console.log(output); 
+console.log(output); // { number: [ 1, 1000 ], string: [ 'hello', 'world' ], function: [ [Function: sayHi] ], boolean: [ true ], bigint: [ 0n ] }
 
 
 // Exercice 2
@@ -23,7 +23,7 @@ if (!Array.prototype.dedup) {
 }
 
 const arr = [1, 2, 2, 3, 4, 4, 5, 6, 6, 6]; 
-console.log(arr.dedup());
+console.log(arr.dedup()); // [ 1, 2, 3, 4, 5, 6 ]
 
 
 // Exercice 3
