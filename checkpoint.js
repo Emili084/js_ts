@@ -11,7 +11,7 @@ return values.reduce((acc, value) => {
 const input = [1, 'hello', function sayHi(){ console.log('hi') }, 'world', true, 0n, 1000];
 const output = categorize(input);
 
-console.log(output);
+console.log(output); 
 
 
 // Exercice 2
@@ -22,7 +22,7 @@ if (!Array.prototype.dedup) {
     };
 }
 
-const arr = [1, 2, 2, 3, 4, 4, 5, 6, 6, 6];
+const arr = [1, 2, 2, 3, 4, 4, 5, 6, 6, 6]; 
 console.log(arr.dedup());
 
 
@@ -34,14 +34,7 @@ const obj = {
     }
 
     function filterObject(obj, predicate) {
-        const result = {};
-        Object.keys(obj).forEach(key => {
-            const value = obj[key];
-            if (predicate(key, value)) {
-                result[key] = value;
-            }
-        });
-        return result;
+        return Object.fromEntries(Object.entries(obj).filter(([key, value]) => predicate(key, value)));
     }
 
     const filtered = filterObject(obj, (key, value) => key === 'foo' || value === 'hello')
